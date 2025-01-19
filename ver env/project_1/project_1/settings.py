@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'first_app',#project settings er moddhe app ke intrigrate korte hobe or connected korte hobe
+    'second_app',
 ]
 
 MIDDLEWARE = [
