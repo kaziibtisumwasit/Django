@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>This is home page</h1>
+    <!-- ========== Start Section ========== -->
+    {% comment %} views.py er data fornt-end e access korbo data ta ashtese
+    backend theke #backend theke jokhon frontend e data ashbe tokhon frontend
+    theke access korte hole
+    {{je_dictonary_ti_backend_theke_ashtese_oi_dictonary_name}} {% endcomment %}
+
+    <!-- ========== End Section ========== -->
+    <h2>Author : {{author}}</h2>
+    <h2>Age : {{age}}</h2>
+    <h2>{{lst}}</h2>
+
+    {% comment %} Conditional Statement {% endcomment %} 
+    {%if age >= 20 %}
+    <h4>You will get driving licence</h4>
+    {%elif age >= 10 and age <= 19%}
+    <h4>You will not get driving license</h4>
+    {%else%}
+    <h4>You're a child</h4>
+    {%endif%} {% comment %} must be end if dite hobe condition sesh e  {% endcomment %}
+  
+
+
+{% comment %} For LOOP  {% endcomment %}
+{% comment %} {{lst}} {{lst}} backend theke front end e data dekhate {{}} use lorte hoi {% endcomment %}
+{% for i in courses %}
+{% comment %} <h3>{{i}}</h3> {% endcomment %}
+<h3> Course ID : {{i.id}} Course Name : {{i.name}} Course Fee : {{i.fees}}</h3>
+{% endfor %}
+
+{% comment %} Join function on templates {% endcomment %}
+<h2> {{ word | join:" " }}</h2>
+
+
+
+<h1>{{ birthdate | date:"D d M Y" }}</h1>
+
+<h1>{{ birthdate | date:"D d M Y h:i:s" }}</h1>
+<h1>{{ birthdate | date:"D d M Y h:i:s A" }}</h1>
+<h1>{{ birthdate | date }}</h1>
+<h1>{{"Python is Fun" | cut:" "}}</h1>
+{% comment %} Cutout space using cut filter {% endcomment %}
+
+{% comment %} Sorting disctinary using dictsort filter  {% endcomment %}
+{% comment %} list er first value pete first filter {% endcomment %}
+
+<h1>{{val | length}}</h1>
+{% comment %} length filter use kore list er length ber kora {% endcomment %}
+<h1>{{'Happy coding .Coding is fun .Fun is moja' | truncatechars:6}} </h1>
+<h1>{{'Happy coding .Coding is fun .Fun is moja' | truncatewords:6}} </h1>
+
+{% comment %} truncatechars:koita character show korbe ta  {% endcomment %}
+      {% comment %} truncatewords : koita word hidden hobe eta {% endcomment %}
+</body>
+</html>
