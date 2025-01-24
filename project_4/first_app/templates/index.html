@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% comment %} sob kichur aghe extends korte hobe .even coment er aghe o {% endcomment %}
+{% comment %} Inherite korlam base.html file ke  {% endcomment %}
+{% comment %} base.html is global templates {% endcomment %}
+
+{% load static %}
+
+
+{% block content %}
+{{block.super}}
+<h1>{{id.name}}</h1>
+
+<h1>I'm Insite Index HTML of first app</h1>
+<img src="{% static 'images/bard2.png' %}" />
+
+
+
+<table class="table">
+      <thead>
+            <tr>
+                  <th scope="col">User ID</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Body</th>
+            </tr>
+      </thead>
+      <tbody>
+      {% for i in data %}
+            <tr>
+                  <th scope={{i.userId}}>1</th>
+                  <td>{{i.id}}</td>
+                  <td>{{i.title}}</td>
+                  <td>{{i.body}}</td>
+                  {% comment %} Value access korte hole {{}} diye access korte hoi {% endcomment %}
+            </tr>
+      {% endfor %}
+      </tbody>
+</table>
+
+{% endblock %}
+
+
+
