@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<form>
+<h1> Home Page</h1>
+<hr>
+
+<div class="d-flex flex-wrap justify-content-center px-3 pt-5">
+      {% for post in data %}
+      <div class="col-sm-3 ">
+        <div class="card mx-2">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p>Author : {{post.author.name}}</p> 
+            
+            {% comment %} post theke author er moddhe jabo author theke name ke access korbo {% endcomment %}
+            
+            {% comment %} Category te multiple value thake. 
+            karon ekti post multiple category hoye thake 
+            tai category er upore loop through korte hobe 
+            {% endcomment %}
+
+            Category : {% for cat in post.category.all %} 
+            <button class="btn btn-primary m-2 btn-sm  " disabled>{{ cat.name }}</button>
+            {% endfor %}
+            <a href="{% url 'edit_post' post.id  %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'delete_post' post.id %}" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+</form>
+
+{% endblock %}

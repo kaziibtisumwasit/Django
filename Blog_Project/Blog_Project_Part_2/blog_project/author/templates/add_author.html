@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%  load crispy_forms_tags %}
+{% comment %} base.html ke inherite korlam  {% endcomment %}
+
+{% block content %}
+<h1 style="width : 30% ; margin : auto">Add Author Page</h1>
+<hr>
+
+
+{% comment %} Views.py te request.POST that's why eikhane method="post" {% endcomment %}
+<form style="width:50% ; margin : auto" method="post">
+   
+{% csrf_token %}
+{{form | crispy}}
+<button class="btn btn-warning ">Submit</button>
+
+</form>
+{% endblock %}

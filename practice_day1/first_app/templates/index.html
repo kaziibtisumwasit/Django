@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>First_app_Index</title>
 </head>
+
 <body>
-      <h1>I'm from first app index !</h1>
+      <h1>I'm from first app index!</h1>
+
+      <p>
+            Firstly, when opening the server's first page, <br>
+            then when typing http://127.0.0.1:8000/first_app/ <br>
+            it hits the project's `urls.py` on `first_app/path` <br>
+            this path calls the `urls` of `first_app` <br>
+            then it redirects to `views.py` file <br>
+            and then renders the HTML file and shows the output on the browser.
+      </p>
+
+      <hr>
+      <h1>Data Access from Backend to Frontend</h1>
+
+      <!-- Accessing the first item in the data list -->
+      <h2>Details of the first person in the list:</h2>
+
+      <!-- data is a dictonary of list -->
+      <p>
+            Name: {{ data.0.name }} <br>
+            Age: {{ data.0.age }} <br>
+            City: {{ data.0.city }} <br>
+      </p>
+
+      <!-- Accessing all item of the data list -->
+      <h2>Details of the ALL Person In The List:</h2>
+      <hr>
+      <p>
+            {% for person in data %}
+            Name : {{person.name}}<br>
+            Age {{person.age}}<br>
+            City: {{person.city}}<br>
+
+            {% if person.age < 30 %} <h1>{{ person.name }} Is Younger</h1>
+                  {% elif person.age >= 30 and person.age <= 50 %} <h1>{{ person.name }} Is Middle Aged</h1>
+                  
+                  
+                  {% else %}
+                        <h1>{{ person.name }} Is Older</h1>
+
+                        {% endif %}
+                        <hr>
+                        {% endfor %}
+      </p>
+
+      <hr>
+
+  <h1>Number of data member : {{ data | length }}</h1>
+
+
+  <h1> </h1>
+
+
 </body>
+
 </html>
