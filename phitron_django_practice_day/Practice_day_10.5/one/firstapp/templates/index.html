@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <!-- List er element ghula ke ek shate join kore dilam maje - er maddhome -->
+      <h1>this is the index page</h1>
+      <p>{{ lst | join:" - "}}</p>
+      
+      
+      <p>Now Time & date is : {{date}}</p>
+
+      <!-- orginized or filter date time format -->
+       {{date | date:"D d M Y H:i:s"}}
+
+       <!-- D : bar d:date M:Month Y:year  H:hour  i:minutes s:seconds-->
+      
+
+      <p>{{ empty | default:"if empty or value has no data or empty string then show this message"}}</p>
+
+  <p>{{20 | add:10}}</p>
+
+  <p>{{ 'sindid' | capfirst }}</p>
+  <p>{{'python is fun' | cut:" "}}</p>
+
+
+  <p>{{"January - February - March" | cut:"-"}}</p>
+
+
+  {{ student | dictsort:"age" }}
+
+      <p>{{ student | dictsortreversed:"age" }}</p>
+
+      <p>{{ student | dictsort:"name"}}</p>
+      <br>
+      <br>
+      <p>Escape Filter er maddhome string er moddhe html tag likhe kaj kora jai </p>
+      {{ "<h1>Hello</h1>" | escape }}
+      <p>{{ "<h3>Escape filter convert special character into HTML entities </h3>" | escape }}</p>
+      <p><h1>Hello World</h1></p>
+
+<p><h1>{{ lst | first }}</h1></p>
+
+<p>{{lst | last}}</p>
+
+<p>{{ lst | length }}</p>
+
+<p>{{ student | linenumbers }}</p>
+
+
+<p>lower : Lower case letter stay lower as it is & all upper case letter make lower ,Upper : upper Case stay upper & all lower case make upper</p>
+
+<p>{{ 'Hello Hi Bye Bye ' | lower}}</p>
+<p>{{ 'Hello Hi Bye Bye ' | upper}}</p>
+
+<p>{{ "it's a new day" | title }}</p>
+
+<p>random filter choose any randon value from list : {{ lst | random }}</p>
+
+
+<p>Slice Filter is doing slice of list elements : {{ lst | slice:"2" }}</p>
+<p>Bakend theke asha list er slice -> slice:"starting_point : ending_point"</p>
+{{ lst | slice:"1:2"}}
+<br>
+<br>
+
+<p>Time formating : {{ t | time:"H:i"}}</p>
+<p>Time formating filter {{ t | time:"s:i:H"}}</p>
+
+<br>
+
+
+<p>Views theke asha date time theke ei muhurteer date time er moddhe parthokko ber kore : {{old_date | timesince}}</p>
+
+
+<p>This post published : {{event | timesince}} ago</p>
+{{ event | timesince}}
+<p>bakend theke asha ekti somoy theke onno ekti somoy er moddhe parthokko : {{post_time | timesince:comment_time }}</p>
+<p>Post time backend theke dewa ekti somoy : {{post_time}}</p>
+<p>Comment time backend theke dewa arekti somy {{comment_time}}</p>
+<p>post time & comment time er moddhe pathokko ber korar jonno timesince use kora hoi</p>
+
+<p>string er koita character er pore  ..... show korbe : {{'happy coding'| truncatechars:6 }} </p>
+
+
+
+<p>count word from sentance or string : {{'happy coding coding is life ' | wordcount}}</p>
+
+<p>string theke word slice kkore newa : {{ "Happy Coding Coding is life"|truncatewords:2}}</p>\
+
+{{ <b>This</b> is <em>a</em> <button>Button</button> | striptags }}
+
+</body>
+</html>

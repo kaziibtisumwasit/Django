@@ -1,0 +1,16 @@
+*Global templates hole project er settings.py er DIRS er moddhe templates folder ti ke add kore dite hobe 
+
+
+*jodi templates folder app folder er vitore hoi tahole Project er settings.py te bole dite hobe na automaticlly detaict kore nibe
+
+
+globally:
+|------project
+|------app
+|------templates
+
+
+inside app folder:
+|------project
+|------app
+       |------templates

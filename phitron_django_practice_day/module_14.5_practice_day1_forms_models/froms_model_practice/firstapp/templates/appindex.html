@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>This is firstapp index page </h1>
+
+<a href="{% url 'addforms' %}">Create Student Forms</a>
+
+<hr>
+
+<a href="{% url 'studentModel' %}">Create Django Model Form</a>
+
+{% endblock %}

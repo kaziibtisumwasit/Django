@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' /home/sindid/Desktop/Code/Phitron/Django/phitron_practice_day/module_14.5_practice_day1_forms_models/forms_models_practice_venv/bin/python3 "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pip._internal.cli.main import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1>This is Model Form HTML</h1>
+
+
+{% if model_data %}
+{% for data in model_data %}
+<!-- <h1>{{data.name}}</h1> -->
+<!-- <hr>
+<h1>{{data.auto_field}}</h1> -->
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">intiger_field</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">UUID_field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{data.intiger_field}}</th>
+      <td>{{data.name}}</td>
+      <td>{{data.address}}</td>
+      <td>{{data.Email}}</td>
+      <td>{{data.UUID_field}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+{% endfor %}
+{% else %}
+<h1>No Data Available !! </h1>
+
+{% endif %}
+
+{% endblock %}
