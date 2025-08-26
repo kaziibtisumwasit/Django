@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Enrollment List</h2>
+<table border="1" cellpadding="8" style="text-align:center; width:50%; margin:auto; border:1px solid #333; padding:20px; border-radius:20px; font-family:Arial;">
+    <tr>
+        <th>Student</th>
+        <th>Subject</th>
+        <th>Date Enrolled</th>
+        
+    </tr>
+    {% for enrollment in enrollments %}
+    <tr>
+        <td>{{ enrollment.student.name }}</td>
+        <td>{{ enrollment.subject }}</td>
+        <td>{{ enrollment.date_enrolled }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
